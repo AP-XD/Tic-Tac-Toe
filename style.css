@@ -27,13 +27,6 @@ body {
   text-align: center;
   color: #260758;
 }
-.status-action {
-  display: flex;
-  margin-top: 20px;
-  font-size: 30px;
-  justify-content: center;
-  height: 30px;
-}
 .status span {
   color: #20c51b;
 }
@@ -72,4 +65,8 @@ body {
   color: #20c51b;
   font-size: 225px;
   margin-bottom: 30px;
+}
+
+.won::after {
+  color: #BD022F;
 }

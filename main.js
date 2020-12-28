@@ -3,6 +3,10 @@ let next = true;
 const st = document.querySelector(".status"); //current status
 const cs = document.querySelectorAll(".eachgrid"); //represents all the divisions of cell
 
+var a,b,c;
+a=b=c=0;
+var k=0;
+
 const click = (e) => {
   const classList = e.target.classList;
 
@@ -24,11 +28,16 @@ for (const c of cs) {
 }
 
 const msg = (letter) => {
+  if (k==1){
+    cs[a].classList.add('won');
+    cs[b].classList.add('won');
+    cs[c].classList.add('won');
+    }
   islive = false;
   if (letter === "x") {
-    st.innerHTML = `WINNER : X`;
+    st.innerHTML = `🥳WINNER : X🥇`;
   } else {
-    st.innerHTML = `<span>WINNER : O</span>`;
+    st.innerHTML = `🥳WINNER : O🥇`;
   }
 };
 
@@ -45,21 +54,21 @@ const currentstats = () => {
 
   // main tic tac toe conditions for match
   if (g1 && g1 === g2 && g1 === g3) {
-    msg(g1);
+    k=1;a=0;b=1;c=2;msg(g1);
   } else if (g4 && g4 === g5 && g4 === g6) {
-    msg(g4);
+    k=1;a=3;b=4;c=5;msg(g4);
   } else if (g7 && g7 === g8 && g7 === g9) {
-    msg(g7);
+    k=1;a=6;b=7;c=8;msg(g7);
   } else if (g1 && g1 === g4 && g1 === g7) {
-    msg(g1);
+    k=1;a=0;b=3;c=6; msg(g1);
   } else if (g2 && g2 === g5 && g2 === g8) {
-    msg(g2);
+    k=1;a=1;b=4;c=7;msg(g2);
   } else if (g3 && g3 === g6 && g3 === g9) {
-    msg(g3);
+    k=1;a=2;b=5;c=8;msg(g3);
   } else if (g1 && g1 === g5 && g1 === g9) {
-    msg(g1);
+    k=1;a=0;b=4;c=8;msg(g1);
   } else if (g3 && g3 === g5 && g3 === g7) {
-    msg(g3);
+    k=1;a=2;b=4;c=6;msg(g3);
   } else if (g1 && g2 && g3 && g4 && g5 && g6 && g7 && g8 && g9) {
     islive = false;
     st.innerHTML = "TIE!!! Click Reload Button to Play Again";
