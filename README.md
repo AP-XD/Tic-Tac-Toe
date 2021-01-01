@@ -1,4 +1,4 @@
-# A Simple Tic Tac Toe game using HTML CSS JAVASCRIPT FOR **IEEE** Project
+# A Simple Tic Tac Toe game using **HTML CSS JAVASCRIPT**
 
 ## Screenshots
 
